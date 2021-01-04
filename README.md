@@ -1,7 +1,11 @@
 # Google Sheets FMC Solution Checker
 A Google Sheets document that can verify FMC solutions using an external REST API.
 
+Some usages:
+
 <img src="solution-checker.gif">
+
+<img src="solution-checker-2.gif">
 
 ---
 
@@ -20,7 +24,7 @@ For each row, it sends a GET request to my REST API using the values on the colu
 The API then returns an integer which will be the length of the solution in case it was correct, or `-1` otherwise.  
 These values are afterwards written down on the sheet on the column `B` labelled as "Results".
 
-As it is now, the function is triggered every time the Sheet is reloaded, but you can set other triggers such as: on form submit, on X amount of time, etc., by going to the Script Trigger tab on the Edit menu within the Script Editor.
+As it is now, the function is triggered every time the form associated to the Sheet is sent, but you can set other triggers such as: on Sheet reload, on X amount of time, etc., by going to the Script Trigger tab on the Edit menu within the Script Editor.
 
 # Can I use this?
 
@@ -38,4 +42,4 @@ or check the live REPL.IT [here](https://repl.it/@GuidoDipietro/solution-checker
 
 # Thanks
 
-No problem
+No poblers
