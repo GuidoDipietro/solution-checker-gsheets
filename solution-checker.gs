@@ -11,7 +11,7 @@ function checkSolutions() {
     
       Logger.log(parsed_res.result);
     
-      sheet.getRange("C"+i).setValue(parsed_res.result);
+      sheet.getRange("C"+(i-1)).setValue(parsed_res.result);
     }
     i++;
   });
