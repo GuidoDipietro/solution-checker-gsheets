@@ -5,14 +5,14 @@ function checkSolutions() {
   var solves = sheet.getDataRange().getValues();
   var i=2;
   solves.forEach(row => {
-    if (row[0]!="Timestamp") {
+    if (i>2) {
       var response = UrlFetchApp.fetch("https://solution-checker.guidodipietro.repl.co/"+scramble+"/"+row[1]);
       var parsed_res = JSON.parse(response.getContentText());
     
       Logger.log(parsed_res.result);
     
       sheet.getRange("C"+i).setValue(parsed_res.result);
-      i++;
     }
+    i++;
   });
 }
