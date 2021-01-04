@@ -89,11 +89,11 @@ class Cube:
 
     # Resets everything to solved
     def flush(self):
-      self.co = np.array([0,0,0,0,0,0,0,0])
-      self.cp = np.array([0,1,2,3,4,5,6,7])
-      self.eo = np.array([0,0,0,0,0,0,0,0,0,0,0,0])
-      self.ep = np.array([0,1,2,3,4,5,6,7,8,9,10,11])
-      self.xp = np.array([0,1,2,3,4,5])
+        self.co = np.array([0,0,0,0,0,0,0,0])
+        self.cp = np.array([0,1,2,3,4,5,6,7])
+        self.eo = np.array([0,0,0,0,0,0,0,0,0,0,0,0])
+        self.ep = np.array([0,1,2,3,4,5,6,7,8,9,10,11])
+        self.xp = np.array([0,1,2,3,4,5])
 
     # Check if a move string solves the cube
     # Ugly, don't watch
