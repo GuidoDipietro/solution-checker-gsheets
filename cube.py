@@ -82,7 +82,9 @@ class Cube:
     # Check if a single move is valid
     def fit(self, m):
         match = re.match("(([RFULDB]w?)|([xyz]))['2]?", m)
-        return True if match.group()==m else False
+        if match:
+          return match.group()==m
+        return False
     # Check if a move string has all valid moves
     def isclean(self, seq):
         return all([self.fit(m) for m in seq.split()])
