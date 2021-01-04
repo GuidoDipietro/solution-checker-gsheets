@@ -108,7 +108,7 @@ class Cube:
         self.apply(sol)
         # choo choo
         if not self.co.all() and not self.eo.all() and self.is_sorted(self.cp) and self.is_sorted(self.ep) and self.is_sorted(self.xp):
-          return len(sol.split())
+          return len(sol.split()) if len(sol.split())<=80 else "DNF"
         self.flush()
         return "DNF"
 
