@@ -103,14 +103,14 @@ class Cube:
     def check(self, scr, sol):
         if not self.isclean(sol):
             self.flush()
-            return -1
+            return "DNF"
         self.apply(scr)
         self.apply(sol)
         # choo choo
         if not self.co.all() and not self.eo.all() and self.is_sorted(self.cp) and self.is_sorted(self.ep) and self.is_sorted(self.xp):
           return len(sol.split())
         self.flush()
-        return -1
+        return "DNF"
 
 # cube = Cube()
 # scramble = "R' U' F L2 B2 U2 B2 R2 D' B2 D' B2 F2 U2 B L B2 R B2 D' B L U2 Lw' Fw' Rw z y x y2 z2 y' y"

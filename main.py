@@ -7,8 +7,8 @@ cube = Cube()
 
 @app.route('/<string:scr>/<string:sol>', methods=['GET'])
 def home(scr, sol):
-  scr = scr.replace("%20", " ").replace("%27", "'").replace("’", "'")
-  sol = sol.replace("%20", " ").replace("%27", "'").replace("’", "'")
+  scr = scr.replace("%20", " ").replace("%27", "'").replace("’", "'").replace("‘","'")
+  sol = sol.replace("%20", " ").replace("%27", "'").replace("’", "'").replace("‘","'")
   return jsonify({
     "result": str(cube.check(scr, sol))
   })
