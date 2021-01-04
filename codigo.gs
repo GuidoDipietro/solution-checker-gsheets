@@ -10,6 +10,7 @@ function checkSolutions() {
   var scramble = sheet.getRange(scramble_cell).getValue();
   
   var i=2;
+  var solution;
   while ((solution = sheet.getRange(solutions_col+i).getValue())) {
     if (!sheet.getRange(results_col+i).getValue()){
       var response = UrlFetchApp.fetch("https://solution-checker.guidodipietro.repl.co/"+scramble+"/"+solution);
