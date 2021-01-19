@@ -52,6 +52,9 @@ https://solution-checker.guidodipietro.repl.co/code -> generates an int between 
 
 or check the live REPL.IT [here](https://repl.it/@GuidoDipietro/solution-checker).
 
+### IMPORTANT NOTICE:
+The API will fail if you submit a solution or scramble with a newline character in it. (Not quite, but it does fail if the submitted response on the Google Form has several lines. To disallow this, just make the response type ***SHORT ANSWER***).
+
 # Thanks
 
 No poblers

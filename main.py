@@ -12,10 +12,14 @@ def code():
     "code": random.randint(100000, 999999)
   })
 
+# Choo choo
+def clean_string(str):
+  return str.replace("%20", " ").replace("%27", "'").replace("’", "'").replace("‘","'").replace("\n","").replace("\t","").replace("%0D","").replace("%0A","")
+
 @app.route('/<string:scr>/<string:sol>', methods=['GET'])
 def home(scr, sol):
-  scr = scr.replace("%20", " ").replace("%27", "'").replace("’", "'").replace("‘","'")
-  sol = sol.replace("%20", " ").replace("%27", "'").replace("’", "'").replace("‘","'")
+  scr = clean_string(scr)
+  sol = clean_string(sol)
   return jsonify({
     "result": str(cube.check(scr, sol))
   })
