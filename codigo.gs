@@ -1,12 +1,5 @@
-function checkSolutions() {
-  ////// EDIT VALUES HERE //////
-  var sheet = "solves";
-  var scramble_cell = "D1";
-  var solutions_col = "B";
-  var results_col = "C";
-  //////////////////////////////
-  
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheet);
+function checkSolutions(sheetname, scramble_cell, solutions_col, results_col) { 
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetname);
   var scramble = sheet.getRange(scramble_cell).getValue();
   
   var i=2;
@@ -17,9 +10,19 @@ function checkSolutions() {
       var parsed_res = JSON.parse(response.getContentText());    
       sheet.getRange(results_col+i).setValue(parsed_res.result);
     }
-    
     i++;
   }
+}
+
+// args: sheet, scramble_cell, solutions_col, results_col
+function checkA1() {
+  checkSolutions("a1","D1","B","C");
+}
+function checkA2() {
+  checkSolutions("a2","D1","B","C");
+}
+function checkA3() {
+  checkSolutions("a3","D1","B","C");
 }
 
 function genCode() {
